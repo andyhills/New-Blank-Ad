@@ -4,19 +4,19 @@ if (!localStorage.isInitialized) {
     localStorage.isInitialized = true;
 }
 
-var env;
-switch (localStorage.newAdEnv) {
-    case "stage":
-        env = "console-stage.postapp.com";
-        break;
-    case "qa":
-        env = "qa-console.postapp.com";
-        break;
-    default:
-        env = "console.flite.com";
-}
-
 chrome.browserAction.onClicked.addListener(function(tab) {
+
+    var env;
+    switch (localStorage.newAdEnv) {
+        case "stage":
+            env = "console-stage.postapp.com";
+            break;
+        case "qa":
+            env = "qa-console.postapp.com";
+            break;
+        default:
+            env = "console.flite.com";
+    }
 
     var newURL = "http://"+env+"/make_component.action?forwardTemplate=&item="+localStorage.newAdGuid+"&name=New%20Blank%20Ad";
     chrome.tabs.create({

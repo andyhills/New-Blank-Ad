@@ -1,4 +1,4 @@
-# FliteFinder
+# New-Blank-Ad
 Create a new blank ad in the Flite Design Studio.
 
 To install, download the zip file, extract it, put it somewhere safe.

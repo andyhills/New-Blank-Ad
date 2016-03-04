@@ -20,6 +20,8 @@
     "background": {
         "scripts": ["background.js"],
         "persistent": true
-    }
+    },
+
+    "options_page": "options.html"
 
 }

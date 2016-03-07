@@ -1,23 +1,97 @@
 <html>
-<head>
+  <head>
     <title>New Blank Ad extesion options page</title>
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/foundation-icons.css">
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,500,600,700,300,200|Open+Sans' rel='stylesheet' type='text/css'>
     <script src="options.js"></script>
     <style>
+      body {
+        background: url(http://mechanics.flite.com/images/background-3.png) no-repeat center center fixed,url(http://mechanics.flite.com/images/linenbg.jpg) repeat fixed;
+        background-color: black;
+        width: 100%;
+        margin-top: 25px;
+      }
+      p {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+      }
 
+      textarea {
+        border-radius: 3px;
+        min-height: 30px;
+      }
+
+      .row {
+        width: 300px;
+      }
+
+      .styled-select {
+        /*background: url(img/arrow.png) no-repeat 96% -2px;*/
+        height: 29px;
+        overflow: hidden;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 3px;
+        outline: none;
+      }
+
+      .styled-select select {
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        height: 29px;
+        padding: 5px;
+        width: 268px;
+        font-family: 'Dosis', sans-serif;
+      }
+
+      .styled-select.slate {
+        height: 34px;
+        width: 240px;
+      }
+
+      .styled-select.slate select {
+        border: 1px solid #ccc;
+        font-size: 16px;
+        height: 34px;
+        width: 295px;
+      }
+
+      .columns {
+        padding:30px 0;text-align:center;
+      }
+
+      #reset {
+        padding: 0.5em 0.7375em !important;
+      }
     </style>
-</head>
-<body>
-    <h2>Options For New Ad extension</h2>
-    <form id="options">
-        Reg GUID of ad to be copied:
-        <textarea name="newAdGuid" rows="1" cols="36"></textarea>
-        <p>From environment
-            <select name="newAdEnv">
-                <option value="production">Production</option>
-                <option value="stage">Stage</option>
-                <option value="qa">QA</option>
-            </select>
-        </p>
-    </form>
+  </head>
 
-</body>
+  <body>
+    <div class="row" >
+      <div class="small-12 centered columns">
+        <a href="http://flite.com" target="_blank"><img src="img/Flite-logo-white-h.png" style="width:150px;"/></a>
+      </div>
+      <div class="small-12 centered columns">
+        <form id="options">
+          <p>Reg GUID of ad to be copied</p>
+          <input type="text" name="newAdGuid" id="guid" value="">
+          <p>Environment</p>
+          <div class="styled-select soflow">
+            <select name="newAdEnv">
+              <option value="production">Production</option>
+              <option value="stage">Stage</option>
+              <option value="qa">QA</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="small-12 centered columns">
+        <a class="small button hollow" id="reset">reset</a>
+      </div>
+    </div>
+  </body>
+</html>
